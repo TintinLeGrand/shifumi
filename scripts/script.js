@@ -28,7 +28,7 @@ function jouer(choixJ1, choixBot) {
         resultat = "perdu";
         scoreBot += 1;
     }
-    resultatDiv[0].innerHTML = "J'ai choisi ... " + choixJ1 + "<br>Le bot a choisi..." + choixBot + "<br>J'ai " + resultat;
+    resultatDiv[0].innerHTML = "J'ai choisi <b>" + choixJ1 + "</b><br>Le bot a choisi...<b>" + choixBot + "</b><br>J'ai <b>" + resultat + "</b>";
 }
 
 
