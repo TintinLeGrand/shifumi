@@ -1,35 +1,26 @@
 console.log("Le fichier HTML accède bien au script");
 
 const boutons = document.querySelectorAll("button");
-var resultatDiv= document.getElementsByClassName("resultat");
-var resultat;
-var scoreJ1, scoreBot = 0;
+const resultatDiv = document.getElementsByClassName("resultat");
+let resultat;
+let scoreJ1 = 0, scoreBot = 0;
 
 boutons.forEach(function (bouton) {
     bouton.addEventListener('click', () => {
-        // alert(bouton.textContent);
-        jeu= jouer(bouton.textContent, aleatoire())
-        resultatDiv.innerHTML += "J'ai choisi ... "+ jeu[1]+ "<br>Le bot a choisi..."+ jeu[2]+ "<br>J'ai "+ jeu[0];
+        jouer(bouton.textContent, aleatoire())
     })
 }
 )
 
-// for (cons bouton in boutons) {
-//     bouton.addEventListener('click', ()=> {
-//         alert(bouton.textContent);
-//     })
-// }
-// ---> structure qui ne fonctionne pas
-
 function aleatoire() {
-    var choix = Math.floor(Math.random() * 3);
+    let choix = Math.floor(Math.random() * 3);
     return boutons[choix].textContent;
 }
 
 function jouer(choixJ1, choixBot) {
-    if (choixJ1 == choixBot) {
+    if (choixJ1 === choixBot) {
         resultat = "fait une égalité";
-    } else if ((choixJ1 == "Pierre" && choixBot == "Ciseaux") || (choixJ1 == "Feuille" && choixBot == "Pierre") || (choixJ1 == "Ciseaux" && choixBot == "Feuille")) {
+    } else if ((choixJ1 === "Pierre" && choixBot === "Ciseaux") || (choixJ1 === "Feuille" && choixBot === "Pierre") || (choixJ1 === "Ciseaux" && choixBot === "Feuille")) {
         resultat = "gagné";
         scoreJ1 += 1;
     }
@@ -37,8 +28,7 @@ function jouer(choixJ1, choixBot) {
         resultat = "perdu";
         scoreBot += 1;
     }
-
-    return (resultat, choixJ1, choixBot)
+    resultatDiv[0].innerHTML = "J'ai choisi ... " + choixJ1 + "<br>Le bot a choisi..." + choixBot + "<br>J'ai " + resultat;
 }
 
 
