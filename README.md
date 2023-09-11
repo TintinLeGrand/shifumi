@@ -1,2 +1,2 @@
 # pomodoro
-Ethan LE NEINDRE &amp; Enzo LE COQ
+Ethan LE NEINDRE, TP2.1
